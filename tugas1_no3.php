@@ -1,6 +1,12 @@
 <!-- Nama  : Ahmad Daniyal Fayyadh -->
 <!-- NIM   : 20051397037 -->
 <!-- Prodi : D4 Manajemen Informatika - 2020A -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
 <?php
 
 echo "PROGRAM DATA NOVEL DETEKTIF" . "<br>" . "<br>";
@@ -48,3 +54,5 @@ echo $infoNovelDetektif->cetak($novelDetektif2) . "<br>" . "<br>";
 echo $infoNovelDetektif->cetak($novelDetektif3) . "<br>" . "<br>";
 
 ?>
+</body>
+</html>
