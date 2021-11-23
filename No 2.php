@@ -1,38 +1,65 @@
-<!-- Nama   : Ahmad Daniyal Fayyadh -->
-<!-- NIM    : 20051397037 -->
-<!-- Kelas  : 2020 A - D4 Manajemen Informatika -->
-
-
 <?php 
 
-class RerataNilai {
-    protected $value, $value2;
-    public function __construct($value, $value2){
-        $this->value = $value;
-        $this->value2 = $value2;
+require_once '../Interface Abstract/Interface.php';
+
+class Airplane implements Flyer {
+    public function takeOff() {
+        return 'Mobil berjalan cepat..';
+    }
+    
+    public function land() {
+        return 'mobil berjalan';
     }
 
-    public function average($value3 = 0){
-        if ($value3 == 0) {
-            $str = $this->value . ' + ' . $this->value2 . ' / 2 = ';
-            return $str . ($this->value += $this->value2 ) / 2;
-
-        } else {
-            $str ='(' . $this->value . ' + ' . $this->value2 . ' + ' . $this->value2 . ') / 3 = ';
-            return $str . ($this->value += $this->value2 += $value3 ) / 3;
-        }
+    public function fly() {
+        return 'mobil dalam perjalanan';
     }
 }
 
-
-class RerataNilai2 extends RerataNilai{
-    public function __construct($value, $value2){
-        parent::__construct($value, $value2);
+class Bird implements Flyer {
+    public function takeOff() {
+        return 'Budi mencari makan';
+    }
+    
+    public function land() {
+        return 'Budi kembali pulang';
     }
 
-    public function average($value3 = 0){
-        return parent::average($value3);
+    public function fly() {
+        return 'Budi keluar';
+    }
+
+    public function buildNest() {
+        return 'Budi membuat minuman';
+    }
+
+    public function layEggs() {
+        return 'budi beraktivitas';
     }
 }
 
-?>
+class Superman implements Flyer {
+    public function takeOff() {
+        return 'polisi mengejar maling';
+    }
+    
+    public function land() {
+        return 'polisi melawan maling';
+    }
+
+    public function fly() {
+        return 'polisi memberikan pukulan';
+    }
+
+    public function leapBuilding() {
+        return 'maling terjatuh dan tertabrak mobil';
+    }
+
+    public function stopBullet() {
+        return 'Polisi menembaki maling namun terpleset';
+    }
+}
+
+$airplane = new Airplane;
+$bird = new Bird;
+$superman = new Superman;
